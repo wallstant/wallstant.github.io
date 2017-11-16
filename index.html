@@ -1,1 +1,398 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wallstant - Open source PHP social network</title>
+	<meta charset="UTF-8">
+    <meta name="description" content="Create your own social network for free with Wallstant the open source PHP social network, easy to install and fast to use .. Make people connected">
+    <meta name="keywords" content="Notifications,social network,social media,Wallstant,meet,free platform,open source,php,web development">
+    <meta name="author" content="Munaf Aqeel Mahdi">
+	<link rel='shortcut icon' type='image/x-icon' href='https://drive.google.com/uc?export=download&#038;id=1pwFLPRbuRZxy601hDspNLCqtmnm7vz3r' />
+	<style type="text/css">
+	*{
+		font-family: sans-serif;
+	}
+	body{
+		margin: 0;
+		padding: 0;
+	}
+	.navbar{
+		z-index: 1;
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    right: 0;
+	    background: rgb(81,93,113);
+	    box-shadow: 0px 0px 22px rgba(0, 0, 0, 0.07);
+	    border-bottom: 1px solid #3f4a60;
+	}
+	.navbar-links{
+		margin: auto;
+		width: fit-content;
+		width: -moz-fit-content;
+		padding: 15px;
+	}
+	.navbar-links a{
+		color: #fff;
+		text-decoration: none;
+		padding: 15px;
+	}
+	.navbar-links a:hover,.navbar-links a:focus{
+		color: #fff;
+		text-decoration: none;
+		border-bottom: 2px solid #2196F3;
+	}
+	.navbar-links ul{
+		margin: 0;
+		padding: 0;
+	}
+	.navbar-links li{
+		list-style: none;
+		display: inline-block;
+	}
+	.navLink_active{
+		border-bottom: 2px solid #2196F3;
+	}
+	.header{
+	    padding-top: 48px;
+	    color: #fff;
+	    background: url('https://drive.google.com/uc?export=download&id=1xJ0oGzZ04h55s8jLQtCQ2hqozXfMGaKF') no-repeat center center;
+	    background-size: cover;
+	}
+	.header-wrapper{
+		text-align: center;
+	    position: relative;
+	    padding: 15px;
+	    padding-bottom: 0px;
+	    background: rgba(75, 86, 106, 0.85);
+	}
+	.header-pc-screen{
+		background: url('https://drive.google.com/uc?export=download&id=1cNpFyGO1o8O1nNqfM6OSEmBpIaKilyod') no-repeat;
+		background-size: contain;
+		width: 600px;
+		height: 300px;
+		margin: auto;
+	}
+	.mainBtnFill{
+		color: #525d71;
+	    background: #fff;
+	    text-decoration: none;
+	    padding: 8px 15px;
+	    border-radius: 20px;
+	    margin: 0px 5px;
+	    border: 1px solid transparent;
+	    transition: background 0.3s,border 0.3s,color 0.3s;
+	}
+	.mainBtnFill:hover,.mainBtnFill:focus{
+		color: #fff;
+		background: transparent;
+		border: 1px solid #fff;
+		text-decoration: none;
+	}
+	.mainBtnUnFill{
+		color: #fff;
+	    background: transparent;
+	    text-decoration: none;
+	    padding: 8px 15px;
+	    border-radius: 20px;
+	    margin: 0px 5px;
+	    border: 1px solid #fff;
+	    transition: background 0.3s,border 0.3s,color 0.3s;
+	}
+	.mainBtnUnFill:hover,.mainBtnUnFill:focus{
+		color: #525d71;
+		background: #fff;
+		border: 1px solid transparent;
+		text-decoration: none;
+	}
+	.container{
+		
+	}
+	#features{
+	    margin: auto;
+	    width: 900px;
+	    text-align: center;
+	    margin-top: 22px;
+	}
+	.features-item{
+		color: #7f7f7f;
+	    margin: 8px;
+	}
+	.features-item span{
+		font-size: 42px;
+    	color: #525d71;
+	}
+	.features-item h3{
+		color: black;	
+	}
+	.under-features{
+		box-shadow: 0px 0px 32px rgba(63, 81, 181, 0.3);
+	}
+	.whats-new{
+		background: rgba(76, 175, 80, 0.12);
+		color: #4CAF50;
+	}
+	.how-to-install{
+		display: flex;
+		width: 60%;
+		margin: auto;
+		padding: 35px;
+	}
+	.contact-us{
+		width: 60%;
+		margin: auto;
+    	border-top: 1px solid #e6e6e6;
+    	padding: 35px;
+    	display: flex;
+	}
+	.facebook{
+		background: #ccc;
+	    padding: 5px 6px;
+	    border-radius: 3px;
+	    color: #fff;
+	    text-decoration: none;
+	    font-size: 19px !important;
+	}
+	.facebook:hover,.facebook:focus{
+		background: #3071c7;
+		text-decoration: none;
+	}
+	.twitter{
+		background: #ccc;
+	    padding: 5px 6px;
+	    border-radius: 3px;
+	    color: #fff;
+	    text-decoration: none;
+	    font-size: 19px !important;
+	}
+	.twitter:hover,.twitter:focus{
+		background: #2196F3;
+		text-decoration: none;
+	}
+	.instagram{
+		background: #ccc;
+	    padding: 5px 6px;
+	    border-radius: 3px;
+	    color: #fff;
+	    text-decoration: none;
+	    font-size: 19px !important;
+	}
+	.instagram:hover,.instagram:focus{
+		background: linear-gradient(310deg,#FFC107,#E91E63,#673AB7);
+		text-decoration: none;
+	}
+	.github{
+		background: #ccc;
+	    padding: 5px 6px;
+	    border-radius: 3px;
+	    color: #fff;
+	    text-decoration: none;
+	    font-size: 19px !important;
+	}
+	.github:hover,.github:focus{
+		background: #6a6a6a;
+		text-decoration: none;
+	}
+	.footer{
+		padding: 15px;
+		text-align: center;
+		background: #ececec;
+		color: #525d71;
+	}
+	.footer a,.footer a:hover,.footer a:focus{
+		text-decoration: none;
+		color:#525d71;
+		font-weight: bold; 
+	}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://use.fontawesome.com/32b120d29a.js"></script>
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+</head>
+<body>
+<div class="navbar">
+	<div class="navbar-links">
+		<ul>
+		<li style="position: relative;">
+			<img src="https://drive.google.com/uc?export=download&id=1TXEiOiJdP-g2Gq4gfhdhYgmGbsNAVNN4" style="width: 32px; position: absolute; top: -21px; left: -25px;">
+		</li>
+		<li><a href="#home" id="navLink" class="navLink_active">Home</a></li>
+		<li><a href="#features" id="navLink">Features</a></li>
+		<li><a href="#whats-new" id="navLink">What's new</a></li>
+		<li><a href="#how-to-install" id="navLink">How to install</a></li>
+		<li><a href="https://github.com/munafaqeelmahdi/wallstant-the-open-source-PHP-social-network" id="navLink">Download</a></li>
+		<li><a href="#contact-us" id="navLink">Contact us</a></li>
+		</ul>
+	</div>
+</div>
+<!-- ======================[ Navbar - Home ]==================== -->
+<div class="header" id="home">
+	<div class="header-wrapper">
+		<h1>Wallstant</h1>
+		<h3>The Open Source PHP Social Network</h3>
+		<p>Create your own social network for free with <b>Wallstant</b> social network, easy to install and fast to use .. Make people connected</p>
+		<p>
+			<a href="https://wallstant.000webhostapp.com/" class="mainBtnFill">View demo</a>
+			<a href="https://github.com/munafaqeelmahdi/wallstant-the-open-source-PHP-social-network" class="mainBtnUnFill"><span class="fa fa-github"></span> Download v1.0</a>
+		</p>
+		<div class="header-pc-screen">
+		</div>
+	</div>
+</div>
+<!-- ======================[ Container ]==================== -->
+<div class="container">
+	<!-- === [ Features ] === -->
+	<div id="features">
+		<div id="features-line1" style="display: flex;">
+			<div class="features-item">
+				<span class="fa fa-code"></span>
+				<h3>Open source</h3>
+				<p>This PHP script is open source on GitHub just download it and start developing</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-shield"></span>
+				<h3>Fast and Secure</h3>
+				<p>Fast & Secure from the most common PHP vulnerabilities not 100% but good to now</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-bars"></span>
+				<h3>Fully Featured</h3>
+				<p>Like, comment, share, save post, report, verify system , messages, notifications and more..</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-paper-plane"></span>
+				<h3>Messaging system</h3>
+				<p>Full messaging system, user typing status, seen message, emoji's.. discover it yourself</p>
+			</div>
+		</div>
+		<div id="features-line2" style="display: flex;">
+			<div class="features-item">
+				<span class="fa fa-smile-o"></span>
+				<h3>Emoji system</h3>
+				<p>Send,comment and post emoji's .. emoji's by -Emoji One- easy and wonderful emoticons</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-check"></span>
+				<h3>Verify badge</h3>
+				<p>Let's people know that an account of public interest is authentic with our verify user system</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-globe"></span>
+				<h3>Multi Language</h3>
+				<p>This script supports multi languages,Main languages are (English - Arabic)..You can add any language you want.</p>
+			</div>
+			<div class="features-item">
+				<span class="fa fa-align-right"></span>
+				<h3>Supports RTL</h3>
+				<p>This script supports RTL (right-to-left) design for Arabic, Urdu, Farsi directions </p>
+			</div>
+		</div>
+	</div>
+	<!-- === [ under features ] === -->
+	<div class="under-features">
+		<div style="text-align: center; padding-top: 8px; color: rgba(82, 93, 113, 0.7);">
+			<h3 style="color: rgb(82, 93, 113);">Messaging system</h3>
+			<p style="width: 70%;margin: auto;">Real-time messaging system, you can send text or emoji and see the other user status like [seen message , Typing a message] and search users, see chat requests or your contacts and also online users status</p>
+		</div>
+		<div style="text-align: center;margin-bottom: 15px;">
+			<img src="https://drive.google.com/uc?export=download&id=1cvIhEEJ3b0d35NCbap8k-sBb_6FIY3Bg" style="width: 70%;" alt="Messaging" />
+		</div>
+		<!-- div2 -->
+		<div style="border-top: 1px solid #e6e6e6;display: flex; width: 700px; margin: auto;color:rgba(83, 93, 113, 0.77); padding: 15px;">
+			<div style="margin: 8px;">
+				<img src="https://drive.google.com/uc?export=download&id=1xuwIvlrVSpvImlsBUFj8c2g15axcQ4nY" style="width: 300px; border: 4px solid rgba(82, 93, 113, 0.2); border-radius: 3px;" alt="dashboard" />
+			</div>
+			<div>
+				<h3 style="margin-top: 8px;color: rgb(82, 93, 113);">Powerful dashboard</h3>
+				<p>Powerful admin's dashboard, Admin can edit, remove user account, verify users, or view and replay to users reports from Support box and also admin can see statistics about whole script database from general tab</p>
+			</div>
+		</div>
+	</div>
+	<!-- === [ whats new ] === -->
+	<div class="whats-new" id="whats-new">
+		<div style="width: 600px; margin: auto; display: flex;">
+			<div style="width: 100%">
+				<h3 style="margin-top: 50px;margin-bottom: 0;">What's New v1.0</h3>
+				<p style="margin: 0;font-size: 13px;">Things that added or removed or fixed in this version</p>
+				<ul>
+					<li>Messaging system.</li>
+					<li>Fixed bugs.</li>
+					<li>New UI design.</li>
+					<li>Arabic language.</li>
+				</ul>
+			</div>
+			<div style="width: 100%">
+				<img src="https://drive.google.com/uc?export=download&id=1TL-CfmXvn6UD-a5ns3ZLZOob5R5LP36X" style="width: 250px;text-align: right;" alt="new" />
+			</div>
+		</div>
+	</div>
+	<!-- === [ How to install ] === -->
+	<div class="how-to-install" id="how-to-install">
+		<div>
+			<img src="https://drive.google.com/uc?export=download&id=1AryEK9UvT1lGqvoTkSvT4u2YU61AYK0F" style="width: 300px;" alt="install-wallstant-social-network" />
+		</div>
+		<div style="color: rgba(82, 93, 113, 0.77);font-size: 14px;">
+			<h3 style="color: black;font-size: auto;">How to install</h3>
+			<p style="color: gray">* When you <b>sign up</b> to the first time into your social network, you will be the main admin of website and you can add more admins from <b>Dashboard > users > Edit/Delete </b>.</p>
+			<ol type="1">
+				<li>First of all, Download the script and extract it on your device.</li>
+				<li>Open your <b>phpMyAdmin</b> and create new database and call it <b>wallstant</b>.</li>
+				<li>Import <b>wallstant.sql</b> to your new database that you created, you can find <b>wallstant.sql</b> from wallstant folder that you extracted, in <b>database</b> folder.</li>
+				<li>Edit <b>connect.php</b> file from <b>config > connect.php</b>, set username and password and database name to your DB name ,pass and username.</li>
+				<li>upload wallstant folder to your host.</li>
+				<li>Enjoy it.</li>
+			</ol>
+		</div>
+	</div>
+	<!-- === [ contact us ] === -->
+	<div id="contact-us" class="contact-us">
+		<div>
+			<img src="https://drive.google.com/uc?export=download&id=1psxFQbsGEhDl-fcbPzneveUqRNnW5YA3" style="width: 300px" alt="contact-us" />
+		</div>
+		<div style="margin: 0px 15px;">
+			<h3 style="text-align: left;">Contact us</h3>
+			<p style="text-align: left;color: #969696; font-size: 15px;">If you wnat to contact us about something or ask a question or report a problem, You can contact us by :
+			</p>
+			<p><b><span class="fa fa-envelope"></span> munafaqeelmahdi@gmail.com</b><br>
+			<b><span class="fa fa-phone"></span> +9647821704671</b></p>
+			
+			<p>
+				<a href="https://www.facebook.com/munafaqeelmahdi.official/" class="fa fa-facebook-official facebook"></a>
+				<a href="http://twitter.com/munaf_aqeel_m" class="fa fa-twitter twitter"></a>
+				<a href="https://www.instagram.com/munaf_ewd/" class="fa fa-instagram instagram"></a>
+				<a href="https://github.com/munafaqeelmahdi" class="fa fa-github github"></a>
+			</p>
+			<p>
+			<a class="github-button" href="https://github.com/munafaqeelmahdi" data-show-count="true" aria-label="Follow @munafaqeelmahdi on GitHub">Follow</a>
+			<a class="github-button" href="https://github.com/munafaqeelmahdi/wallstant-the-open-source-PHP-social-network" data-icon="octicon-star" data-show-count="true" aria-label="Star munafaqeelmahdi/wallstant-the-open-source-PHP-social-network on GitHub">Star</a>
+			</p>
+		</div>
+	</div>
+</div>
+<!-- ======================[ Footer ]==================== -->
+<div class="footer">
+	Made with <span class="fa fa-heart" style="color: red"></span> by <a href="http://fb.com/munaf.aqeel.m">Munaf Aqeel Mahdi</a> | 2018 &copy; Wallstant 
+</div>
+<!-- ======================[ JavaScript app codes ]==================== -->
+<script type="text/javascript">
+$(document).ready(function () {
+    $('a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        $(document).off("scroll");
+        
+        $('a').each(function () {
+            $(this).removeClass('navLink_active');
+        })
+        $(this).addClass('navLink_active');
+      
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top - 49
+        }, 400, 'swing');
+        window.location.hash = target;
+    });
+});
+</script>
+</body>
+</html>
