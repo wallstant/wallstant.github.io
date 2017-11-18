@@ -203,6 +203,34 @@
 		color:#525d71;
 		font-weight: bold; 
 	}
+	.modal-bg{
+		display: none;
+	    position: fixed;
+	    background: rgba(0, 0, 0, 0.34);
+	    top: 0px;
+	    left: 0px;
+	    right: 0px;
+	    bottom: 0px;
+	    z-index: 1;
+	}
+	.modal-box{
+	    margin: auto;
+	    width: 460px;
+	    background: #fff;
+	    padding: 15px;
+	    margin-top: 15%;
+	    border-radius: 5px;
+	    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.37);
+        color: #686868;
+	}
+	.modal-box-title{
+		font-size: 25px;
+	    font-variant: all-petite-caps;
+	    margin: 0;
+	    padding: 0px 6px;
+	    color: #F44336;
+	    background: rgba(255, 0, 0, 0.1);
+	}
 	</style>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://use.fontawesome.com/32b120d29a.js"></script>
@@ -231,11 +259,21 @@
 		<h3>The Open Source PHP Social Network</h3>
 		<p>Create your own social network for free with <b>Wallstant</b> social network, easy to install and fast to use .. Make people connected</p>
 		<p>
-			<a href="#" onclick="alert('Demo is not available right now!\n You can see pictures bellow or download the script and discover it yourself.\n Demo version will be available as soon as we can.')" class="mainBtnFill">View demo</a>
+			<a href="#" onclick="$('.modal-bg').show();" class="mainBtnFill">View demo</a>
 			<a href="https://github.com/munafaqeelmahdi/wallstant-the-open-source-PHP-social-network" class="mainBtnUnFill"><span class="fa fa-github"></span> Download v1.1</a>
 		</p>
 		<div class="header-pc-screen">
 		</div>
+	</div>
+</div>
+<!-- ======================[ ModalBox ]==================== -->
+<div class="modal-bg">
+	<div class="modal-box">
+		<p class="modal-box-title">Demo is not available right now!</p>
+		<p>
+			You can see pictures bellow or download the script and discover it yourself.
+		</p>
+		<span style="background: rgba(255, 193, 7, 0.13); color: #FFC107; padding: 8px; border-radius: 20px;">Demo version will be available as soon as we can</span>
 	</div>
 </div>
 <!-- ======================[ Container ]==================== -->
@@ -393,6 +431,9 @@ $(document).ready(function () {
         }, 400, 'swing');
         window.location.hash = target;
     });
+});
+$('.modal-bg').on('click',function(){
+	$(this).hide();
 });
 </script>
 </body>
