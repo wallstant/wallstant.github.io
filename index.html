@@ -204,7 +204,7 @@
 		font-weight: bold; 
 	}
 	.modal-bg{
-		display: none;
+		display: block;
 	    position: fixed;
 	    background: rgba(0, 0, 0, 0.34);
 	    top: 0px;
@@ -215,7 +215,8 @@
 	}
 	.modal-box{
 	    margin: auto;
-	    width: 460px;
+	    width: auto;
+    max-width: 600px;
 	    background: #fff;
 	    padding: 15px;
 	    margin-top: 15%;
@@ -255,42 +256,12 @@
 <!-- ======================[ Navbar - Home ]==================== -->
 <div class="header" id="home">
 	<div class="header-wrapper">
-		<p style="
-		    background: linear-gradient(45deg, #2196F3, #E91E63);
-		    max-width: 61%;
-		    margin: auto;
-		    margin-top: 20px !important;
-		    margin-bottom: 10px !important;
-		    color: #fff;
-		    padding: 20px 10px;
-		    border-radius: 20px;
-		    line-height: 1.3;
-		"><span style="
-		    background: #fff;
-		    color: #9153a3;
-		    display: block;
-		    max-width: 50px;
-		    margin: auto;
-		    margin-top: -5px;
-		    margin-bottom: 10px;
-		    padding: 4px 11px;
-		    border-radius: 20px;
-		">Notice</span>I'm working now on a new social network project, It will be fast, secure, Great UI, responsive design, no errors, and more great features and it will release as soon as I can .. so,Stay tuned
-		<span style="
-		    display: block;
-		    background: #00000024;
-		    max-width: fit-content;
-		    padding: 2px 16px;
-		    border-radius: 20px;
-		    margin: auto;
-		    margin-top: 5px;
-		    margin-bottom: -10px;
-		">It will have a new official website with a new name</span></p>
 		<h1>Wallstant</h1>
 		<h3>The Open Source PHP Social Network</h3>
 		<p>Create your own social network for free with <b>Wallstant</b> social network, easy to install and fast to use .. Make people connected</p>
 		<p>
-			<a href="#" onclick="$('.modal-bg').show();" class="mainBtnFill">View demo</a>
+			<a href="#" onclick="$('.modal-bg').show();" class="mainBtnFill" style="color: #ffffff;
+            background: #F44336;">Important before use!</a>
 			<a href="https://github.com/munafio/wallstant-the-open-source-PHP-social-network" class="mainBtnUnFill"><span class="fa fa-github"></span> Download v2</a>
 		</p>
 		<div class="header-pc-screen">
@@ -300,11 +271,39 @@
 <!-- ======================[ ModalBox ]==================== -->
 <div class="modal-bg">
 	<div class="modal-box">
-		<p class="modal-box-title">Demo is not available right now!</p>
-		<p>
-			You can see pictures bellow or download the script and discover it yourself.
-		</p>
-		<span style="background: rgba(255, 193, 7, 0.13); color: #FFC107; padding: 8px; border-radius: 20px;">Demo version will be available as soon as we can</span>
+		<p style="
+		    background-color: #fff;
+		    max-width: 600px;
+		    margin: auto;
+		    
+		    color: #868686;
+		    padding: 15px 20px;
+		    border-radius: 20px;
+		    line-height: 1.3;
+		    font-family: sans-serif;
+		"><span style="
+		    color: #F44336;
+		    display: block;
+		    font-weight: bold;
+		    margin-bottom: 15px;
+		">Important to read!</span>
+    
+
+    <span style="
+    border-left: 3px solid #eee;
+    padding-left: 15px;
+    display: block;
+"><strong>Wallstant</strong> built for about 4 years ago, without a
+clean code or using a modern technologies and with no OOP concept or specific design
+pattern that makes the code understandable and reusable by other developers, that’s why you may face a lot of bugs or issues with a specific feature in the project! because of the messive code that it’s written with.<br>
+<br>
+I was thinking about rebuild a new one with a new name, to be <strong>fast,
+secure, fully featured, and easy to develop and use</strong>… with the use of the modern technologies, frameworks, and concepts that make the project more reusable …<br>
+<strong>but</strong>!! I don’t really started building it yet, that because of the time and my work … but as soon as I can I’ll start building it and till that moment! I promise it will be great :)<br>
+<br>
+Thanks,
+Munaf.
+    </span></p>
 	</div>
 </div>
 <!-- ======================[ Container ]==================== -->
